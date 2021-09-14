@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/slick.css" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Todo App</title>
+</head>
+<body onload="checkLogged()" >
+    <div class="main-page">
+      <div class="container">
+        <div class="user-infor-box"> 
+            <div class="user-infor">
+                
+            </div>
+            <h5 onclick="logout()" style="display:none;">Đăng xuất</h5>
+        </div>
+        <h1>Todo List</h1>
+        <img class="list-image list-image-left" src="./image/undraw_next_tasks_iubr.svg" alt="left image">
+        <img class="list-image list-image-right" src="./image/undraw_percentages_0rur.svg" alt="right image">
+        <button class="add-task" onclick="showform()">Add task</button>
+        <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col" colspan="2">Tên công việc</th>
+                <th scope="col" colspan="2">Mô tả công việc</th>
+                <th scope="col">Ngày hết hạn </th>
+                <th scope="col">Trạng thái</th>
+                <th scope="col">Thao tác</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <div class="paginatoin">
+          <div class="prev" onclick="prevPage()">prev</div>
+          <div class="page-numbering">
+            <div class="page active" onclick="beActive(this)">1</div>
+          </div>
+          <div class="next" onclick="nextPage()">next</div>
+        </div>
+      </div>
+      <img class="footer" src="./image/wave.svg" alt="footer">
+    </div>
+    <div class="login-success" style="top: 0px;left: 0px; display: none;">
+        <div>
+        </div>
+    </div>
+    <div class="login-fail" style="top: 0px;left: 0px; display: none;">
+        <div>
+        </div>
+    </div>
+    <form style="display: none" onsubmit="submitInfor() ; return false">
+        <button type="button" class="btn btn-danger" onclick="hideForm()" style="margin-left: 28%;"><i class="fas fa-times"></i></button>
+        <div class="mb-3 ">
+          <label for="exampleInputEmail1" class="form-label">Tên công việc</label>
+          <input type="text" class="form-control" aria-describedby="emailHelp" required>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Mô tả</label>
+          <input type="text" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Ngày hết hạn </label>
+          <input type="date" class="form-control day" required>
+         </div>
+         <div>
+            <label for="exampleInputPassword1" class="form-label">Trạng thái</label>
+            <select class="form-select form-control" aria-label="Default select example">
+                <option value="Đang làm">Đang làm</option>
+                <option value="Đã hoàn thành">Đã hoàn thành</option>
+                <option value="Tạm dừng">Tạm dừng</option>
+              </select>
+         </div>
+        <button type="submit" class="btn btn-success" >Submit</button>
+    </form>
+
+    <script src="./js/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="./js/slick.min.js"></script>
+    <script  src="./js/todo.js"></script>
+</body>
+</html>

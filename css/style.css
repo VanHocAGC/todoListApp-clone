@@ -1,0 +1,468 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+body{
+  overflow: hidden;
+}
+
+a{
+  text-decoration: none;
+  color: #1d1d1d;
+}
+li{
+  list-style-type:none;
+}
+button{
+  border: 1px solid #00cba9;
+  outline: none;
+}
+p{
+  margin: 0px;
+}
+input,i,p,h5{
+  font-size:1.4rem;
+}
+.hidden{
+  display: none;
+}
+
+.login-page{
+  height: 100vh;
+  width: 100%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.login-background{
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width:45%;
+  z-index: -1;
+}
+.login-image{
+  height:70%;
+  position: absolute;
+  left: 120px;
+  bottom: 100px;
+}
+.login-box{
+  height: 400px;
+  width: 400px;
+  background-color: transparent;
+  border-radius:10px;
+  margin-left: 600px;
+  display:flex;
+  justify-content:space-between;
+  flex-direction:column;
+  align-items: center;
+}
+.avatar{
+  width:20%;
+}
+.login-box h1{
+  text-transform: uppercase;
+  font-size:3.5rem;
+  font-weight: 700;
+  color: #2a2a2a;
+  margin-top:15px;
+}
+.login-header{
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+}
+.login-input{
+  margin-bottom: 50px;
+}
+.login-input div{
+  position: relative;
+}
+.login-input div input{
+  width: 300px;
+  height:34px;
+  border: none;
+  outline: none;
+  color:#666;
+  font-weight:500;
+  background-color: transparent;
+}
+.login-input div p:before{
+  height:2px;
+  width:370px;
+  content:'';
+  background-color:#00cba9;
+  position:absolute;
+  bottom: -2px;
+  left:-35px;
+}
+.login-input div p{
+  font-weight: 700;
+  color: #888;
+  margin: 20px 0px 0px 0px;
+}
+.login-input div i{
+  position: absolute;
+  top: 32px;
+  left:-30px;
+  color: #00cba9;
+}
+.sign-up{
+  display: flex;
+  justify-content:space-between;
+  margin-top:20px;
+}
+
+h5{
+  font-size:1.4rem;
+  font-weight: 700;
+  color: #777;
+  transition: transform 0.2s ease-in-out;
+}
+h5:hover{
+  cursor: pointer;
+  transform: translateY(-3px);
+  transition: transform 0.2s ease-in-out;
+}
+.login-box>button{
+  padding:10px 85px;
+  border-radius: 30px;
+  font-size:1.4rem;
+  font-weight: 700;
+  background-image: linear-gradient(to right,#32bef8 , #38d39f,#32be8f);
+  background-size: 200%;
+  color: #fff;
+  transition: 0.5s ease;
+}
+.login-box>button:hover{
+  background-position: right;
+}
+.login-input div span{
+  display:none;
+  position:absolute;
+  bottom: -20px;
+  left: 0px;
+  font-weight: 700;
+}
+.login-input .valid .right-message{
+  display:block;
+  color:#00cba9;
+}
+.login-input .invalid .wrong-message{
+  display:block;
+  color: red;
+}
+.login-input .invalid p:before{
+  background-color:red;
+}
+.login-input .invalid i{
+  color:red;
+}
+.retake-box-show{
+  transform:translateX(-380%);
+  transition:transform 0.6s ease;
+}
+.signup-box-show{
+  transform: translateY(-190%);
+  transition:transform 0.6s ease;
+}
+.login-box-hide{
+  opacity: 0;
+  transition:opacity 0.6s linear;
+}
+.retake-page{
+  position: absolute;
+  top: 0;
+  right:-100%;
+}
+.retake{
+  transition:transform 0.6 linear !important;
+}
+.login-success{
+  height: 100vh;
+  width: 100% ;
+  position: absolute; 
+  z-index: 123; 
+  background-color: #abfdf6d0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.login-success div{
+  height: 200px;
+  width: 500px;
+  background-color:#f3f8fe;
+  border-radius:10px;
+  box-shadow:rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.login-success div p{
+  font-size:3.4rem;
+}
+.login-success div p i{
+  color: #00cba9;
+  font-size: 3.4rem;
+}
+.login-fail-format{
+  height: 100vh;
+  width: 100% ;
+  position: absolute; 
+  z-index: 123; 
+  background-color: #ffa6a6d0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.login-fail-format div{
+  height: 200px;
+  width: 500px;
+  background-color:#f3f8fe;
+  border-radius:10px;
+  box-shadow:rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.login-fail-format div p{
+  font-size:3.4rem;
+}
+.login-fail-format div p i{
+  color: #ff534d;
+  font-size: 3.4rem;
+}
+.login-fail{
+  height: 100vh;
+  width: 100% ;
+  position: absolute; 
+  z-index: 123456; 
+  background-color: #ffa6a6d0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.login-fail div{
+  height: 200px;
+  width: 500px;
+  background-color:#f3f8fe;
+  border-radius:10px;
+  box-shadow:rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align: center;
+}
+.login-fail div p{
+  font-size:3.4rem;
+  text-align: center;
+}
+.login-fail div p i{
+  color: #ff534d;
+  font-size: 3.4rem;
+}
+/* main page */
+
+.light{
+  display:none;
+}
+.main-page{
+  background-color: #f3f8fe;
+  height:100vh;
+}
+.container{
+  display:flex;
+  flex-direction: column;
+  
+}
+.container h1{
+  font-size:4.5rem;
+  text-align: center;
+  margin: 30px 0px;
+}
+.table{
+  font-size:1.4rem;
+  width: 90% ;
+  margin: 0px auto;
+  z-index: 122;
+}
+.list-item td , .list-item th{
+  padding: 20px 0px !important;
+ 
+}
+.list-item{
+  border-left: 2px solid #00cba9;
+  border-bottom: 10px solid transparent;
+  border-radius:0px 5px 5px 0px;
+  background-color: #95ffed;
+}
+
+
+.list-image{
+  position:absolute;
+  height:30%;
+  z-index: 3;
+}
+.list-image-left{
+  bottom: 0px;
+  left: 0px;
+}
+.list-image-right{
+  bottom: 0px;
+  right: 0px;
+}
+.footer{
+  position:absolute;
+  bottom: -120px;
+  z-index: 2;
+}
+
+.add-task{
+  width:150px;
+  height:40px;
+  align-self: flex-start;
+  margin:0px 0px 20px 100px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  background-image: linear-gradient(to right,#32bef8 , #38d39f,#32be8f);
+  background-size: 200%;
+  color: #fff;
+  border-radius: 5px;
+  transition: 0.5s ease;
+}
+.add-task:hover{
+  background-position: right;
+}
+.user-infor-box{
+  height:80px;
+  width:auto;
+  position: absolute;
+  right: 180px;
+  top: 20px;
+}
+.user-infor-box>h5{
+  height:50px;
+  width:200px;
+  border-radius:10px;
+  position: absolute;
+  box-shadow:rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  bottom: -70px;
+  right:0px;
+  text-align: center;
+  padding-top: 15px;
+}
+
+.user-infor{
+  height:80px;
+  width:auto;
+  box-shadow:rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius:10px;
+  display:flex;
+  justify-content:space-evenly;
+  align-items: center;
+  padding:0px 50px;
+}
+.user-infor img{
+  height:60%;
+}
+.user-infor p {
+  font-size:2rem;
+  font-weight: 600;
+  margin-right: 30px;
+}
+.user-infor button{
+  border: none;
+  background-color: transparent;
+  font-size:2rem;
+  margin-left: 8px;
+  transition: transform 0.3s linear ;
+
+}
+.user-infor button:focus{
+ transform:rotate(180deg);
+ transition: transform 0.3s linear ;
+}
+form{
+  height: 100vh;
+  width: 100% ;
+  position: absolute; 
+  z-index: 123; 
+  background-color: #abfdf6d0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  top: 0px;
+  flex-direction: column;
+  font-size:2rem;
+}
+form div{
+  width:30%;
+}
+form input, form select{
+  height:32px;
+  width: 700px;
+  font-size: 1.6rem !important;
+}
+form .btn-success{
+  padding:10px 38px;
+  margin-top: 20px;
+  background-image: linear-gradient(to right,#32bef8 , #38d39f,#32be8f);
+  background-size: 200%;
+  border: none;
+  font-size:1.6rem;
+  transition: 0.5s ease;
+}
+form .btn-success:hover{
+  background-position: right;
+}
+.paginatoin{
+  font-size: 1.6rem;
+  z-index: 122;
+  display:flex;
+  position: absolute;
+  top: 560px;
+  left: 0;
+  width:100%;
+  text-align: center;
+  justify-content:center;
+  user-select: none;
+}
+.paginatoin .prev ,.paginatoin .next {
+  background-color: #00cba9;
+  color:#fff;
+  width: 60px;
+  border-radius: 20px;
+  transition:transform 0.3s
+}
+.paginatoin .prev:hover 
+,.paginatoin .next:hover{
+  cursor: pointer;
+}
+.paginatoin .prev:hover{
+  transform: translateX(-5px);
+}
+.paginatoin .next:hover{
+  transform: translateX(5px);
+} 
+.paginatoin .next{
+  margin-left: 3px;
+}
+.page-numbering{
+  display: flex;
+}
+.page-numbering div{
+  border:1px solid #00CBA9;
+  width:40px;
+  height: 100%;
+  margin-left: 3px;
+  border-radius: 5px;
+}
+.page-numbering .active{
+  background-color:#00cba9;
+  color:#fff;
+}
+.page-numbering div:hover{
+  cursor: pointer;
+}

@@ -1,0 +1,16 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+html {
+    font-size: 62.5%;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+ul {
+    padding-left: 0;
+    list-style: none;
+}

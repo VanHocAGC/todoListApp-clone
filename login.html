@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/slick.css" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Login</title>
+</head>
+<body onload="resetLogged()">
+    <!-- login -->
+    <div class="login-page">
+        <div class="login-success" style="  display:none;">
+            <div>
+            </div>
+        </div>
+        <div class="login-fail" style="  display:none;">
+            <div>
+            </div>
+        </div>
+        <img class="login-image" src="./image/undraw_personalization_triu.svg" alt="">
+        <div class="login-box login">
+            <div class="login-header">
+                <img class="avatar" src="./image/undraw_profile_pic_ic5t.svg" alt="">
+                <h1>Đăng Nhập</h1>
+            </div>
+            <div class="login-input">
+                <div class="account">
+                    <i class="fas fa-user"></i>
+                    <p>Tên tài khoản</p>
+                    <input class="account-input" onblur="checkName(this)" name="account" type="text" required>
+                    <span class = "wrong-message">Tên tài khoản chỉ bảo gồm chữ và số(nhiều hơn 6 ký tự )</span>
+                    <span class="right-message">Nice!</span>
+                </div>
+                <div class="password">
+                    <i class="fas fa-lock"></i>
+                    <p>Mật khẩu</p>
+                    <input class="password-input" onblur="checkPassword(this)" name="password" id="password" type="password" required>
+                    <span class = "wrong-message">Mật khẩu phải dài hơn 8 ký tự </span>
+                    <span class="right-message">Nice!</span>
+                </div>
+                <div class="sign-up">
+                    <h5 class="sign-up-button" onclick="showSignup()">Đăng ký</h5>
+                    <h5 class="forgot-password" onclick="showRetake()">Bạn quên mật khẩu?</h5>
+                </div>
+            </div>
+            <button class="login-button" onclick="submitLogin()" >Đăng nhập</button>
+        </div>
+        <img class="login-background" src="./image/wave.png" alt="">
+    </div>
+    <!-- sign up -->
+    <div class="login-page">
+        <div class="login-box signup">
+            <div class="login-header">
+                <img class="avatar" src="./image/undraw_profile_pic_ic5t.svg" alt="">
+                <h1>Đăng Ký</h1>
+            </div>
+            <div class="login-input">
+                <div class="account">
+                    <i class="fas fa-user"></i>
+                    <p>Tên tài khoản</p>
+                    <input class="account-input" onblur="checkName(this)" name="account" type="text" required>
+                    <span class = "wrong-message">Tên tài khoản chỉ bảo gồm chữ và số(nhiều hơn 6 ký tự )</span>
+                    <span class="right-message">Nice!</span>
+                </div>
+                <div class="password">
+                    <i class="fas fa-lock"></i>
+                    <p>Mật khẩu</p>
+                    <input class="password-input-signup" onblur="checkPassword(this)" name="password" type="password" required>
+                    <span class = "wrong-message">Mật khẩu phải dài hơn 8 ký tự </span>
+                    <span class="right-message">Nice!</span>
+                </div>
+                <div class="password-confirm">
+                    <i class="fas fa-lock"></i>
+                    <p>Nhập lại mật khẩu</p>
+                    <input class="password-confirm-input" onblur="checkPasswordConfirm(this)" name="password-confirm"  type="password" required>
+                    <span class = "wrong-message">Phải nhập đúng mật khẩu</span>
+                    <span class="right-message">Nice!</span>
+                </div>
+                <div class="sign-up" style="justify-content:flex-end">
+                    <h5 onclick="returnLoginSignup()">quay lại trang đăng nhập</h5>
+                </div>
+            </div>
+            <button onclick="submitAccount()">Đăng Ký</button>
+        </div>
+
+    </div>
+    <!-- take password -->
+    <div class="login-page retake-page">
+        <div class="login-box retake">
+            <div class="login-header">
+                <img class="avatar" src="./image/undraw_profile_pic_ic5t.svg" alt="">
+                <h1>Lấy lại mật khẩu</h1>
+            </div>
+            <div class="login-input">
+                <div class="account">
+                    <i class="fas fa-user"></i>
+                    <p>Tên tài khoản</p>
+                    <input class="account-input" onblur="checkName(this)" name="account" type="text" required>
+                    <span class = "wrong-message">Tên tài khoản chỉ bảo gồm chữ và số(nhiều hơn 5 ký tự )</span>
+                    <span class="right-message">Nice!</span>
+                </div>
+                <div class="password-retake">
+                    
+                </div>
+                <div class="sign-up" style="justify-content:flex-end">
+                    <h5 onclick="returnLogin()">quay lại trang đăng nhập</h5>
+                </div>
+            </div>
+            <button class="login-button" onclick="retakePassword()">Kiểm tra</button>
+        </div>
+    </div>
+
+    <script src="./js/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="./js/slick.min.js"></script>
+    <script type="text/javascript" src="./js/index.js"></script>
+</body>
+</html>
